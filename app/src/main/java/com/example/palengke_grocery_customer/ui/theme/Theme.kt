@@ -1,64 +1,38 @@
 package com.example.palengke_grocery_customer.ui.theme
 
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.ui.graphics.Color
-import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.ui.graphics.Color
 
+// The design sheet specifies a light theme ("Theme · Light" in Settings F04).
 private val LightColorScheme = lightColorScheme(
     primary = Leaf,
     onPrimary = Surface,
-    primaryContainer = Color(0xFFEAF5EE),
-    onPrimaryContainer = LeafDark,
+    primaryContainer = GreenTint,
+    onPrimaryContainer = LeafDeep,
     secondary = Fresh,
     onSecondary = Surface,
-    secondaryContainer = Color(0xFFE5F4EA),
-    onSecondaryContainer = LeafDark,
-    tertiary = AccentDark,
+    secondaryContainer = GreenTint,
+    onSecondaryContainer = LeafDeep,
+    tertiary = Mango,
     onTertiary = Surface,
     background = Background,
-    onBackground = OnSurface,
+    onBackground = Ink,
     surface = Surface,
-    onSurface = OnSurface,
-    surfaceVariant = SurfaceVariant,
+    onSurface = Ink,
+    surfaceVariant = GreenTint,
     onSurfaceVariant = OnSurfaceVariant,
     outline = Border,
-    error = Error,
+    outlineVariant = Border,
+    error = Tomato,
     onError = Surface
 )
 
-private val DarkColorScheme = darkColorScheme(
-    primary = DarkPrimary,
-    onPrimary = DarkBackground,
-    primaryContainer = DarkPrimaryContainer,
-    onPrimaryContainer = DarkOnSurface,
-    secondary = DarkSecondary,
-    onSecondary = DarkBackground,
-    secondaryContainer = Color(0xFF2A3F2E),
-    onSecondaryContainer = DarkOnSurface,
-    tertiary = Accent,
-    onTertiary = DarkBackground,
-    background = DarkBackground,
-    onBackground = DarkOnSurface,
-    surface = DarkSurface,
-    onSurface = DarkOnSurface,
-    surfaceVariant = DarkSurfaceVariant,
-    onSurfaceVariant = DarkOnSurfaceVariant,
-    outline = Color(0xFF2F4A36),
-    error = Color(0xFFFF8A80),
-    onError = DarkBackground
-)
-
 @Composable
-fun PalengkeTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
-) {
-    val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
+fun PalengkeTheme(content: @Composable () -> Unit) {
     MaterialTheme(
-        colorScheme = colorScheme,
+        colorScheme = LightColorScheme,
         typography = PalengkeTypography,
         content = content
     )
