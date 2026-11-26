@@ -1,5 +1,7 @@
 package com.example.palengke_grocery_customer.navigation
 
+import android.net.Uri
+
 sealed class Screen(val route: String) {
     object Splash : Screen("splash")
     object Login : Screen("login")
@@ -7,10 +9,10 @@ sealed class Screen(val route: String) {
     object Otp : Screen("otp")
     object Home : Screen("home")
     object BrowseCategory : Screen("browse/{categoryId}") {
-        fun createRoute(categoryId: String) = "browse/$categoryId"
+        fun createRoute(categoryId: String) = "browse/${Uri.encode(categoryId)}"
     }
     object SearchResults : Screen("search/{query}") {
-        fun createRoute(query: String) = "search/$query"
+        fun createRoute(query: String) = "search/${Uri.encode(query)}"
     }
     object SearchFilters : Screen("filters")
     object AllCategories : Screen("all_categories")
